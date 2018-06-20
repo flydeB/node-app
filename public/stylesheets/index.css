@@ -1,0 +1,88 @@
+/*
+*   index页面样式
+*/
+
+/*轮播样式*/
+/* flexslider */
+.flexslider{position:relative;height:400px;overflow:hidden;background:url(../img/loading.gif) 50% no-repeat;}
+.slides{position:relative;z-index:1;}
+.slides li{height:400px;}
+.flex-control-nav{position:absolute;bottom:10px;z-index:2;width:100%;text-align:center;}
+.flex-control-nav li{display:inline-block;width:14px;height:14px;margin:0 5px;*display:inline;zoom:1;}
+.flex-control-nav a{display:inline-block;width:14px;height:14px;line-height:40px;overflow:hidden;background:url(../img/dot.png) right 0 no-repeat;cursor:pointer;}
+.flex-control-nav .flex-active{background-position:0 0;}
+.flex-direction-nav{position:absolute;z-index:3;width:100%;top:45%;}
+.flex-direction-nav li a{display:block;width:50px;height:50px;overflow:hidden;cursor:pointer;position:absolute;}
+.flex-direction-nav li a.flex-prev{left:40px;background:url(../img/prev.png) center center no-repeat;}
+.flex-direction-nav li a.flex-next{right:40px;background:url(../img/next.png) center center no-repeat;}
+
+.dropright-title-li:before{
+    display: inline-block;
+    border-left: 5px solid #464646;
+    border-bottom: 4px solid transparent;
+    border-top: 4px solid transparent;
+    content: '';
+    padding-left: 5px;
+}
+/*内容*/
+#index_content{
+    min-height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+#index_content a{
+    text-decoration: none;
+}
+.main_content{
+
+    min-height: 400px;
+}
+.main_content a{
+    color: #464646;
+}
+.main_content ul{
+   margin-top:10px;
+}
+.main_content_title_p{
+    color: #464646;
+    border-bottom: 1px dashed #808080;
+    line-height: 30px;
+}
+
+.main_content_left{
+    float: left;
+    width: 25%;
+    height: 100%
+}
+.postDesc_title a{
+    margin-right: 10px;
+    min-width: 160px;
+    max-width: 200px;
+    float: left;
+    display: block;     /*定义显示形式*/
+    overflow: hidden;      /*截取超出字符*/
+    text-overflow: ellipsis;     /*超出字符以…代替*/
+    white-space: nowrap;     /*确定超出宽度字符不换行*/
+}
+.postDesc_news_release_date{
+    float: right;font-size: 12px;color: #808080
+}
+.main_content_right{
+    float: left;
+    width: 70%;
+    height: 100%;
+    margin-left: 5%;
+}
+.main_content_right_child_top{height:170px;overflow:hidden;}
+.main_content_right_child_top_left{
+    width: 46%;
+    height: 100%;
+    float: left
+}
+.main_content_right_child_top_right{
+    margin-left:8%;
+    width: 46%;
+    height: 100%;
+    float: left
+}

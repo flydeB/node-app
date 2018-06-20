@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title><%=title %>></title>
+    <link rel="stylesheet" href="stylesheets/common.css" type="text/css"/>
+    <script type="text/javascript" src="javaacripts/jquery.js"></script>
+    <script type="text/javascript" src="javascripts/common.js"></script>
+    <style type="text/css">
+        #index_content {
+            lin-height: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div style="width: 100%">
+    <!--头部-->
+    <div style="background: #444444">
+        <div class="header" id="header_id">
+            <div class="user-wrap-left">SevenNight,hi，欢迎你来到本网站</div>
+            <div class="user-wrap">
+                <a href="#">登陆</a>
+                <a href="#">注册</a>
+                <a href="#">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+    <!--logo-->
+    <div class="logo_header_id" id="logo_header_id">
+        <div class="logo-div-left"></div>
+        <div class="menu-div-right">
+            <ul id="menu">
+                <li class="two_grade selected"><a href="/business">企业评论</a></li>
+                <li class="two_grade"><a href="/graduate">学生评论</a></li>
+                <li class="two_grade"><a href="#">数据分析</a></li>
+            </ul>
+        </div>
+    </div>
+    <!--内容-->
+    <div id="index_content">
+        <div style="width: 100%;height: 600px;background: #f0f0f0;">
+            <div style="background: #f3f3f3;color: #333;">
+                <span style="height: 40px;line-height:40px;margin: 8px;">首页 / 企业评论>企业点评</span>
+            </div>
+            <div style="display: flex;height: 100%;background: #fff;">
+                <div style="flex: 20%;margin: 10px auto;">
+                    <a href="/business_detail" style="width: 100%;display: block;margin: 2px auto;color: #666">> 招聘信息</a>
+                    <a href="/business_comment" style="width: 100%;display: block;margin: 2px auto;color: #666">> 企业点评</a>
+                </div>
+                <div style="flex: 80%;color: #999;">
+                    实现毕业生对企业的评价功能，真实有效评价一次可获得有效积分的功能。（具体评价企业的工作环境、工资待遇、企业文化、幸福指数、企业饮食住宿情况等信息）
+                    <div><a href="/graduate_comment" style="color: #666;">> 我要点评</a></div>
+                    <div style="width: 100%;height: 150px;margin: 10px 0;display: flex;align-items: center;">
+                        <div style="flex: 80px;">
+                            <img style="width: 80px;height: 80px;border-radius: 50%;" src="images/touxiang.jpg" alt="">
+                        </div>
+                        <div style="flex: 86%;margin: 10px 0;color: #666;">
+                            <a href="#">
+
+                                <!-- 循环内容 -->
+                                <div style="margin: 10px 0;display: flex">
+                                    <span style="flex: 40px;">张*三</span>
+                                    <span style="flex: 70%">
+                                    <span style="margin-right: 20px;">企业评分：4.2</span>
+                                    <span style="margin-right: 20px;">工作环境：良好</span>
+                                    <span style="margin-right: 20px;">工资待遇：4k-5k</span><br>
+                                    <span style="margin-right: 20px;">企业文化：4.2</span>
+                                    <span style="margin-right: 20px;">幸福指数：3.4</span>
+                                    <span style="margin-right: 20px;">饮食住宿：3.1</span>
+                                </span>
+
+                                    <span style="flex: 40px;text-align: right;">2018-3-22</span>
+                                </div>
+                                <div style="color: #999">评论内容：
+                                    中兴软创是阿里巴巴和中兴通讯共同投资的一家全球领先的云计算科技公司，成立于2003年，基于云计算、大数据、人工智能技术驱动，为全球80多个国家和地区的电信运营商及政府、企业等行业客户提供优质软件产品和服务。
+                                </div>
+                            </a>
+                            <a href="#" style="float:right;color: #666;">已回复：123213</a>
+                        </div>
+                    </div>
+                    <div style="width: 100%;height: 150px;margin: 10px 0;display: flex;align-items: center;">
+                        <div style="flex: 80px;">
+                            <img style="width: 80px;height: 80px;border-radius: 50%;" src="images/touxiang.jpg" alt="">
+                        </div>
+                        <div style="flex: 86%;margin: 10px 0;color: #666;">
+                            <a href="#">
+                                <div style="margin: 10px 0;display: flex">
+                                    <span style="flex: 40px;">张*三</span>
+                                    <span style="flex: 70%">
+                                    <span style="margin-right: 20px;">企业评分：4.2</span>
+                                    <span style="margin-right: 20px;">工作环境：良好</span>
+                                    <span style="margin-right: 20px;">工资待遇：4k-5k</span><br>
+                                    <span style="margin-right: 20px;">企业文化：4.2</span>
+                                    <span style="margin-right: 20px;">幸福指数：3.4</span>
+                                    <span style="margin-right: 20px;">饮食住宿：3.1</span>
+                                </span>
+
+                                    <span style="flex: 40px;text-align: right;">2018-3-22</span>
+                                </div>
+                                <div style="color: #999">评论内容：
+                                    中兴软创是阿里巴巴和中兴通讯共同投资的一家全球领先的云计算科技公司，成立于2003年，基于云计算、大数据、人工智能技术驱动，为全球80多个国家和地区的电信运营商及政府、企业等行业客户提供优质软件产品和服务。
+                                </div>
+                            </a>
+                            <a href="#" style="float:right;color: #666;">已回复：123213</a>
+                        </div>
+                    </div>
+                    <div style="width: 40%;height: 40px;font-size: 18px;color: #666;margin: 0 auto;">
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;"> < </a>
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;">1</a>
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;">2</a>
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;">3</a>
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;">...</a>
+                        <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;"> > </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--版权信息-->
+    <div class="footer">
+        <p>公司地址：XX省XXXX市XXXX路1-2棟(023-93837373)</p>
+        <p>XXX公司 &nbsp;&nbsp;版权所有 © 2005-2014</p>
+        <p>ICP备案号：浙ICP备0000000号-1 浙网文[2014]0000-000号 来源:<a href="http://www.mycodes.net/" target="_blank">源码之家</a></p>
+    </div>
+</div>
+
+</body>
+</html>
