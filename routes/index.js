@@ -4,7 +4,7 @@ var router = express.Router();
 const mongoClient = require('mongodb').MongoClient
 const dbUrl = 'mongodb://localhost:27017'
 
-var dnName = 'register'
+var dbName = 'register'
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -20,20 +20,61 @@ router.get('/business_comment',function(req,res,next){
    res.render('business_comment',{title:'business_comment'})
 });
 
+/*登陆*/
 router.get('/loading',function(req,res,next){
     res.render('loading',{title:'loading'})
 })
 
+/*注册*/
+router.get('/register',function(req,res){
+    res.render('register',{title:'register'})
+})
+
+router.post('/toRegister',function(req,res){
+    let userName = req.body.user;
+    let psw = req.body.psw;
+    __connectDB((err,db)=>{
+        if(err){
+            console.log(err)
+            return
+        }
+        let collection = db.collection('user')
+        collection.find({userName:userName}).toArray((err,docArr)=>{
+            if(err){
+                console.log(err)
+                res.send('注册失败！！')
+                return
+            }
+            if(docArr.length>0){
+                res.send('账号已经被注册了！！')
+                return
+            }else{
+                collection.insertMany([{userName,psw}],(err,result,client)=>{
+                    if(err){
+                        console.log(err)
+                        res.send('注册失败')
+                        client.close()
+                        return
+                    }
+                    console.log(result)
+                    res.redirect('/loading')
+                })
+            }
+        })
+    })
+})
+
+/*登陆*/
 router.post('/toLoad',function(req,res){
-    let user = req.body.user;
-    let pws = req.body.pws;
+    let userName = req.body.user;
+    let psw = req.body.psw;
     __connectDB((err,db,client)=>{
       if(err){
           console.log(err);
           return
       }
       let collection = db.collection('user')
-        collection.find({user:user}).toArray(function(err,docs){
+        collection.find({userName:userName}).toArray(function(err,docs){
              if(err){
                  console.log(err);
                  return
@@ -41,8 +82,9 @@ router.post('/toLoad',function(req,res){
             if(docs.length<=0){
                res.send('用户不存在')
             }else{
-                if(docs[0].pws === pws){
+                if(docs[0].psw === psw){
                     res.send('登陆成功')
+                    // res.redirect('/index')
                 }else{
                     res.send('请输入正确的密码')
                 }
@@ -62,8 +104,8 @@ function __connectDB(callback){
           callback('error at connect',null,client)
         }
 
-        let db = client.db(dnName)
-       callback(null,db,cilent)
+        let db = client.db(dbName)
+       callback(null,db,client)
 
    })
 }
