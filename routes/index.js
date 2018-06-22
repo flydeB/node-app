@@ -3,7 +3,6 @@ var router = express.Router();
 
 const mongoClient = require('mongodb').MongoClient
 const dbUrl = 'mongodb://localhost:27017'
-
 var dbName = 'register'
 
 /* GET home page. */
@@ -11,40 +10,47 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'index' })
 });
 
+/*GET /business_detail*/
 router.get('/business_detail',function(req,res,next){
    res.render('business_detail',{title:'business_detail'})
 });
 
-router.get('/graduate_detail.ejs', function(req, res, next) {
-    res.render('graduate_detail.ejs', { title: 'graduate_detail.ejs' });
+/*GET graduate_detail*/
+router.get('/graduate_detail', function(req, res, next) {
+    res.render('graduate_detail', { title: 'graduate_detail' });
 });
 
-/*登陆*/
+/*GET loading*/
 router.get('/loading',function(req,res,next){
     res.render('loading',{title:'loading'})
 })
 
+/*GET graduate*/
 router.get('/graduate',function(req,res,next){
     res.render('graduate',{title:'graduate'})
 })
 
+/*GET graduate_info*/
 router.get('/graduate_info',function(req,res,next){
     res.render('graduate_info',{title:'graduate_info'})
 })
 
+/*GET graduate_comment*/
 router.get('/graduate_comment',function(req,res,next){
     res.render('graduate_comment',{title:'graduate_comment'})
 })
 
+/*GET graduate_detail*/
 router.get('/graduate_detail',function(req,res,next){
     res.render('graduate_detail',{title:'graduate_detail'})
 })
 
-/*注册*/
+/*GET register*/
 router.get('/register',function(req,res){
     res.render('register',{title:'register'})
 })
 
+/*POST toRegister*/
 router.post('/toRegister',function(req,res){
     let userName = req.body.user;
     let psw = req.body.psw;
@@ -79,7 +85,7 @@ router.post('/toRegister',function(req,res){
     })
 })
 
-/*登陆*/
+/*POST toLoad*/
 router.post('/toLoad',function(req,res){
     let userName = req.body.user;
     let psw = req.body.psw;
@@ -140,7 +146,7 @@ router.post('/toLoad',function(req,res){
      })
  })
 
- /*从数据库中拿到数据渲染在business_comment 上面*/
+ /*从数据库中拿到数据渲染在business_comment上面*/
 router.get('/business_comment',function(req,res,next){
     var selectData = function(db,callback){
         __connectDB((err,db)=>{
@@ -170,6 +176,7 @@ router.get('/business_comment',function(req,res,next){
 
 module.exports = router;
 
+/*链接 数据库的函数*/
 function __connectDB(callback){
    mongoClient.connect(dbUrl,(err,client)=>{
         if(err){
