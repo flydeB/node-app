@@ -58,6 +58,8 @@
                 <div style="flex: 80%;color: #999;">
                     实现毕业生对企业的评价功能，真实有效评价一次可获得有效积分的功能。（具体评价企业的工作环境、工资待遇、企业文化、幸福指数、企业饮食住宿情况等信息）
                     <div><a href="/graduate_comment" style="color: #666;">> 我要点评</a></div>
+                    <!--评论信息-->
+                    <% for(var i = 0;i<data.length;i++){%>
                     <div style="width: 100%;height: 150px;margin: 10px 0;display: flex;align-items: center;">
                         <div style="flex: 80px;">
                             <img style="width: 80px;height: 80px;border-radius: 50%;" src="images/touxiang.jpg" alt="">
@@ -67,14 +69,14 @@
 
                                 <!-- 循环内容 -->
                                 <div style="margin: 10px 0;display: flex">
-                                    <span style="flex: 40px;">张*三</span>
+                                    <span style="flex: 40px;"><%= data[i].name %></span>
                                     <span style="flex: 70%">
-                                    <span style="margin-right: 20px;">企业评分：4.2</span>
-                                    <span style="margin-right: 20px;">工作环境：良好</span>
-                                    <span style="margin-right: 20px;">工资待遇：4k-5k</span><br>
-                                    <span style="margin-right: 20px;">企业文化：4.2</span>
-                                    <span style="margin-right: 20px;">幸福指数：3.4</span>
-                                    <span style="margin-right: 20px;">饮食住宿：3.1</span>
+                                    <span style="margin-right: 20px;">企业评分：<%= data[i].score%></span>
+                                    <span style="margin-right: 20px;">工作环境：<%= data[i].env%></span>
+                                    <span style="margin-right: 20px;">工资待遇：<%= data[i].sal%></span><br>
+                                    <span style="margin-right: 20px;">企业文化：<%= data[i].cul%></span>
+                                    <span style="margin-right: 20px;">幸福指数：<%= data[i].hap%></span>
+                                    <span style="margin-right: 20px;">饮食住宿：<%= data[i].eat%></span>
                                 </span>
 
                                     <span style="flex: 40px;text-align: right;">2018-3-22</span>
@@ -87,6 +89,8 @@
                             <a href="#" style="float:right;color: #666;">已回复：123213</a>
                         </div>
                     </div>
+                    <%}%>>
+
                     <div style="width: 40%;height: 40px;font-size: 18px;color: #666;margin: 0 auto;">
                         <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;"> < </a>
                         <a href="#" style="background: #f0f0f0;padding: 4px 8px;margin: 0 8px;">1</a>
