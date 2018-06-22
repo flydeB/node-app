@@ -15,9 +15,8 @@ router.get('/business_detail',function(req,res,next){
    res.render('business_detail',{title:'business_detail'})
 });
 
-
-router.get('/business_comment',function(req,res,next){
-   res.render('business_comment',{title:'business_comment'})
+router.get('/graduate_detail.ejs', function(req, res, next) {
+    res.render('graduate_detail.ejs', { title: 'graduate_detail.ejs' });
 });
 
 /*登陆*/
@@ -31,6 +30,14 @@ router.get('/graduate',function(req,res,next){
 
 router.get('/graduate_info',function(req,res,next){
     res.render('graduate_info',{title:'graduate_info'})
+})
+
+router.get('/graduate_comment',function(req,res,next){
+    res.render('graduate_comment',{title:'graduate_comment'})
+})
+
+router.get('/graduate_detail',function(req,res,next){
+    res.render('graduate_detail',{title:'graduate_detail'})
 })
 
 /*注册*/
@@ -101,6 +108,65 @@ router.post('/toLoad',function(req,res){
     })
 
 })
+
+/*提交点评信息*/
+ router.post('/graduate_talk',function(req,res){
+     let name = req.body.name;
+     let score = req.body.score;
+     let env = req.body.env;
+     let sal = req.body.nsal;
+     let cul = req.body.cul;
+     let hap = req.body.hap;
+     let eat = req.body.eat;
+     let textarea = req.body.textarea
+
+     __connectDB((err,db)=>{
+         if(err){
+             condole.log(err)
+             return
+         }
+         let collection = db.collection('company')
+         var data = {name,score,env,sal,cul,hap,eat,textarea}
+         collection.insert(data,(err,result,client)=>{
+             if(err){
+                 console.log(err)
+                 client.close()
+                 res.send('评论失败')
+                 return;
+             }
+             console.log(result)
+             res.redirect('/business_comment')
+         })
+     })
+ })
+
+ /*从数据库中拿到数据渲染在business_comment 上面*/
+router.get('/business_comment',function(req,res,next){
+    var selectData = function(db,callback){
+        __connectDB((err,db)=>{
+            if(err){
+                console.log(err)
+                return
+            }
+            var collection = db.collection('company');
+            collection.find().toArray(function(err,result){
+                if(err){
+                    console.log(err)
+                    return;
+                }
+                callback(result)
+            })
+        })
+    }
+
+    mongoClient.connect(dbUrl,function(err,db){
+        selectData(db,function(result){
+            console.log(result)
+            res.render('business_comment',{title:'business_comment',data:result})
+        })
+    })
+});
+
 
 module.exports = router;
 

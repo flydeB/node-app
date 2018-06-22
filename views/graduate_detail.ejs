@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title><%= title%></title>
+    <title><%= title%>></title>
     <link rel="stylesheet" href="stylesheets/common.css" type="text/css"/>
     <script type="text/javascript" src="javascripts/jquery.js"></script>
     <script type="text/javascript" src="javascripts/common.js"></script>
@@ -56,35 +56,52 @@
                 </div>
                 <div style="flex: 80%;">
                     通过身边的教师、家人、亲朋好友的认证，认证其自身在校情况、个人经历等情况的认证）
-                    <div style="display: flex;background: #fff;">
-                        <a href="/graduate_detail" style="flex: 25%;text-align: center;margin: 20px 8px;padding: 10px;border: 1px solid #f0f0f0;">
-                            <img src="images/touxiang.jpg" alt="" style="width: 120px;height: 120px;">
-                            <div style="color: #333;">张三</div>
-                            <div style="color: #ccc;">14 计算机应用 </div>
-                            <p style="color: #666;">20301230102</p>
-                        </a>
-                        <a href="/graduate_detail" style="flex: 25%;text-align: center;margin: 20px 8px;padding: 10px;border: 1px solid #f0f0f0;">
-                            <img src="images/touxiang.jpg" alt="" style="width: 120px;height: 120px;">
-                            <div style="color: #333;">张三</div>
-                            <div style="color: #ccc;">14 计算机应用 </div>
-                            <p style="color: #666;">20301230102</p>
-                        </a>
-                        <a href="/graduate_detail" style="flex: 25%;text-align: center;margin: 20px 8px;padding: 10px;border: 1px solid #f0f0f0;">
-                            <img src="images/touxiang.jpg" alt="" style="width: 120px;height: 120px;">
-                            <div style="color: #333;">张三</div>
-                            <div style="color: #ccc;">14 计算机应用 </div>
-                            <p style="color: #666;">20301230102</p>
-                        </a>
-                        <a href="/graduate_detail" style="flex: 25%;text-align: center;margin: 20px 8px;padding: 10px;border: 1px solid #f0f0f0;">
-                            <img src="images/touxiang.jpg" alt="" style="width: 120px;height: 120px;">
-                            <div style="color: #333;">张三</div>
-                            <div style="color: #ccc;">14 计算机应用 </div>
-                            <p style="color: #666;">20301230102</p>
-                        </a>
-                    </div>
+                    <table style="width: 100%;font-size: 16px;color: #333;">
+                        <tr style="width: 100%;height: 40px;">
+                            <td style="width: 50%;">
+                                教师: <input type="text" value="王五">
+                            </td>
+                            <td style="width: 50%;">
+                                电话: <input type="text" value="15622633***">
+                            </td>
+
+                        </tr>
+                        <tr style="width: 100%;height: 40px;">
+                            <td style="width: 50%;">
+                                父亲: <input type="text" value="张一">
+                            </td>
+                            <td style="width: 50%;">
+                                电话: <input type="text" value="15622633***">
+                            </td>
+                        </tr>
+                        <tr style="width: 100%;height: 40px;">
+                            <td style="width: 50%;">
+                                好友: <input type="text" value="李四">
+                            </td>
+                            <td style="width: 50%;">
+                                电话: <input type="text" value="15622633***">
+                            </td>
+                        </tr>
+                        <tr style="width: 100%;height: 80px;">
+                            <td>
+                                在校情况：
+                                <textarea name="a"></textarea>
+                            </td>
+                        </tr>
+                        <tr style="width: 100%;height: 80px;">
+                            <td>
+                                个人经历：
+                                <textarea name="a"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <button type="submit"> 提交信息</button>
                 </div>
+
             </div>
+
         </div>
+
     </div>
     <!--版权信息-->
     <div class="footer">
