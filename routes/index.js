@@ -25,6 +25,14 @@ router.get('/loading',function(req,res,next){
     res.render('loading',{title:'loading'})
 })
 
+router.get('/graduate',function(req,res,next){
+    res.render('graduate',{title:'graduate'})
+})
+
+router.get('/graduate_info',function(req,res,next){
+    res.render('graduate_info',{title:'graduate_info'})
+})
+
 /*注册*/
 router.get('/register',function(req,res){
     res.render('register',{title:'register'})
